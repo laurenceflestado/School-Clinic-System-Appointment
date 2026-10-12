@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Staff Login - School Clinic</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../index.html">School Clinic</a>
+  <nav><a href="../index.html">Home</a></nav>
+</header>
+<main style="max-width:420px">
+  <h1>Staff Login</h1>
+  <form class="card" id="login-form">
+    <label for="identifier">Email or Staff ID</label>
+    <input type="text" id="identifier" required autofocus>
+    <label for="password">Password</label>
+    <input type="password" id="password" required>
+    <button type="submit" style="margin-top:14px">Log In</button>
+    <p class="hint">Press Enter to submit.</p>
+  </form>
+  <p class="hint">Demo: admin@school.edu / admin123 &middot; ana@school.edu / nurse123</p>
+</main>
+<script src="../js/config.js"></script>
+<script src="../js/session.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/login.js"></script>
+</body>
+</html>

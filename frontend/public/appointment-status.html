@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Check Appointment Status - School Clinic</title>
+<link rel="stylesheet" href="../shared/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../index.html">School Clinic</a>
+  <nav>
+    <a href="book-appointment.html">Book Appointment</a>
+    <a href="appointment-status.html">Check Status</a>
+    <a href="../shared/login.html">Staff Login</a>
+  </nav>
+</header>
+<main>
+  <h1>Check Appointment Status</h1>
+  <form class="card" id="lookup-form">
+    <label for="reference">Reference Number</label>
+    <input type="text" id="reference" placeholder="CLINIC-2026-XXXXXX" required>
+    <button type="submit">Check Status</button>
+  </form>
+
+  <div class="card" id="status-card" style="display:none">
+    <h2>Appointment <span id="ref-out"></span></h2>
+    <p>Status: <span class="badge" id="status-badge"></span></p>
+    <table>
+      <tr><th>Service</th><td id="out-service"></td></tr>
+      <tr><th>Date</th><td id="out-date"></td></tr>
+      <tr><th>Time</th><td id="out-time"></td></tr>
+      <tr><th>Nurse</th><td id="out-nurse"></td></tr>
+    </table>
+    <p class="hint">No medical information is shown here for privacy.</p>
+
+    <div id="checkin-box" style="display:none">
+      <h3>Check In</h3>
+      <label for="checkin-student-id">Student / Employee ID</label>
+      <input type="text" id="checkin-student-id" required>
+      <button id="checkin-btn">Check In</button>
+      <p id="queue-out" class="reference-box" style="display:none"></p>
+    </div>
+
+    <div id="cancel-box">
+      <h3>Cancel this appointment</h3>
+      <label for="cancel-student-id">Student / Employee ID</label>
+      <input type="text" id="cancel-student-id" required>
+      <button id="cancel-btn" class="danger">Cancel Appointment</button>
+    </div>
+  </div>
+</main>
+<script src="../js/config.js"></script>
+<script src="../js/session.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/status.js"></script>
+</body>
+</html>

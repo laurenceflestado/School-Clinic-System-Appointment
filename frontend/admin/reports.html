@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reports - Admin</title>
+<link rel="stylesheet" href="../shared/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="dashboard.html">School Clinic - Admin</a>
+  <nav>
+    <span id="welcome"></span>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="nurses.html">Nurses</a>
+    <a href="schedules.html">Schedules</a>
+    <a href="reports.html">Reports</a>
+    <a href="audit.html">Audit Log</a>
+    <button id="logout-btn">Log Out</button>
+  </nav>
+</header>
+<main>
+  <h1>Reports</h1>
+  <div class="card">
+    <label for="r-date">Date</label>
+    <input type="date" id="r-date">
+  </div>
+  <div class="grid grid-3" id="summary-cards"></div>
+  <div class="card">
+    <h2>Capacity &amp; Occupancy</h2>
+    <table id="capacity-table">
+      <thead><tr><th>Service</th><th>Nurse</th><th>Hours</th><th>Booked / Capacity</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <p class="hint">Counts only — no clinical detail is shown here. See Nurse &gt; Patients for medical history (nurse-only, logged).</p>
+</main>
+<script src="../js/config.js"></script>
+<script src="../js/session.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/admin-reports.js"></script>
+</body>
+</html>

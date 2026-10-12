@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Appointments - School Clinic</title>
+<link rel="stylesheet" href="../shared/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../index.html">School Clinic</a>
+  <nav>
+    <span id="welcome"></span>
+    <a href="../public/book-appointment.html">Book Appointment</a>
+    <button id="logout-btn">Log Out</button>
+  </nav>
+</header>
+<main>
+  <h1>My Appointments</h1>
+  <div class="card">
+    <table id="appt-table">
+      <thead><tr><th>Reference</th><th>Service</th><th>Date</th><th>Time</th><th>Nurse</th><th>Status</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div class="empty-state" id="empty-state" style="display:none">No appointments yet.</div>
+  </div>
+</main>
+<script src="../js/config.js"></script>
+<script src="../js/session.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/patient-dashboard.js"></script>
+</body>
+</html>

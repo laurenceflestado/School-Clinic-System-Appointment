@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nurses - Admin</title>
+<link rel="stylesheet" href="../shared/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="dashboard.html">School Clinic - Admin</a>
+  <nav>
+    <span id="welcome"></span>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="nurses.html">Nurses</a>
+    <a href="schedules.html">Schedules</a>
+    <a href="reports.html">Reports</a>
+    <a href="audit.html">Audit Log</a>
+    <button id="logout-btn">Log Out</button>
+  </nav>
+</header>
+<main>
+  <h1>Nurse Accounts</h1>
+  <div class="card">
+    <h2>Create Nurse Account</h2>
+    <form id="create-form" class="grid grid-2">
+      <div><label>Staff ID</label><input type="text" id="n-staff-id" required></div>
+      <div><label>Full Name</label><input type="text" id="n-full-name" required></div>
+      <div><label>Email</label><input type="email" id="n-email" required></div>
+      <div><label>Temporary Password</label><input type="password" id="n-password" required minlength="6"></div>
+      <div style="grid-column:1/-1"><button type="submit">Create Nurse</button></div>
+    </form>
+  </div>
+  <div class="card">
+    <table id="nurse-table">
+      <thead><tr><th>Staff ID</th><th>Name</th><th>Email</th><th>Status</th><th>Actions</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</main>
+<script src="../js/config.js"></script>
+<script src="../js/session.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/admin-nurses.js"></script>
+</body>
+</html>

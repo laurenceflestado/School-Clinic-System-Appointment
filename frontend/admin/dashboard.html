@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Dashboard - School Clinic</title>
+<link rel="stylesheet" href="../shared/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="dashboard.html">School Clinic - Admin</a>
+  <nav>
+    <span id="welcome"></span>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="nurses.html">Nurses</a>
+    <a href="schedules.html">Schedules</a>
+    <a href="reports.html">Reports</a>
+    <a href="audit.html">Audit Log</a>
+    <button id="logout-btn">Log Out</button>
+  </nav>
+</header>
+<main>
+  <h1>Today at a Glance</h1>
+  <div class="grid grid-3" id="summary-cards"></div>
+
+  <div class="card">
+    <h2>Clinic Capacity Today</h2>
+    <table id="capacity-table">
+      <thead><tr><th>Service</th><th>Nurse</th><th>Hours</th><th>Booked / Total Capacity</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div class="empty-state" id="empty-state" style="display:none">No schedules for today.</div>
+  </div>
+</main>
+<script src="../js/config.js"></script>
+<script src="../js/session.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/admin-dashboard.js"></script>
+</body>
+</html>

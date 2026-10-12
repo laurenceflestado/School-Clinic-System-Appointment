@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Queue - School Clinic</title>
+<link rel="stylesheet" href="../shared/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="dashboard.html">School Clinic - Nurse</a>
+  <nav>
+    <span id="welcome"></span>
+    <a href="dashboard.html">Appointments</a>
+    <a href="queue.html">Queue</a>
+    <a href="patients.html">Patients</a>
+    <button id="logout-btn">Log Out</button>
+  </nav>
+</header>
+<main>
+  <h1>Today's Queue</h1>
+  <p class="hint">Keyboard: <strong>N</strong> calls the next waiting patient &middot; <strong>Esc</strong> closes the consultation panel.</p>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h2>Waiting Line</h2>
+      <button id="call-next-btn">Call Next (N)</button>
+      <table id="queue-table">
+        <thead><tr><th>#</th><th>Patient</th><th>Reason</th><th>Status</th><th>Action</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="empty-state" id="empty-state" style="display:none">Nobody in the queue today.</div>
+    </div>
+
+    <div class="card">
+      <h2>Add a Walk-in Patient</h2>
+      <form id="walkin-form">
+        <label for="wi-search">Search returning patient (by name or ID)</label>
+        <input type="text" id="wi-search" autocomplete="off">
+        <div id="wi-results"></div>
+        <label for="wi-student-id">Student / Employee ID</label>
+        <input type="text" id="wi-student-id" required>
+        <label for="wi-full-name">Full Name</label>
+        <input type="text" id="wi-full-name" required>
+        <label for="wi-contact">Contact Number</label>
+        <input type="text" id="wi-contact">
+        <label for="wi-reason">Reason</label>
+        <textarea id="wi-reason" required></textarea>
+        <button type="submit" style="margin-top:10px">Add to Queue</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="card" id="consult-panel" style="display:none">
+    <h2>Consultation — <span id="consult-patient"></span></h2>
+    <input type="hidden" id="consult-id">
+    <div class="grid grid-3">
+      <div><label>Temperature (°C)</label><input type="number" step="0.1" id="v-temp"></div>
+      <div><label>Blood Pressure</label><input type="text" id="v-bp" placeholder="120/80"></div>
+      <div><label>Pulse Rate</label><input type="number" id="v-pulse"></div>
+      <div><label>Respiratory Rate</label><input type="number" id="v-resp"></div>
+      <div><label>Height (cm)</label><input type="number" step="0.1" id="v-height"></div>
+      <div><label>Weight (kg)</label><input type="number" step="0.1" id="v-weight"></div>
+    </div>
+    <p class="hint" id="temp-notice" style="display:none;color:var(--danger)">Elevated temperature — consider further evaluation.</p>
+
+    <label>Findings</label>
+    <textarea id="c-findings"></textarea>
+    <label>Treatment</label>
+    <textarea id="c-treatment"></textarea>
+    <label>Medication Given</label>
+    <textarea id="c-medication"></textarea>
+    <label>Instructions</label>
+    <textarea id="c-instructions"></textarea>
+
+    <button id="save-consult-btn" class="secondary">Save</button>
+    <button id="complete-consult-btn">Complete Consultation</button>
+    <button id="close-consult-btn" class="secondary" type="button">Close (Esc)</button>
+  </div>
+</main>
+<script src="../js/config.js"></script>
+<script src="../js/session.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/nurse-queue.js"></script>
+</body>
+</html>

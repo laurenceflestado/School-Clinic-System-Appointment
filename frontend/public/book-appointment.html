@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book Appointment - School Clinic</title>
+<link rel="stylesheet" href="../shared/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../index.html">School Clinic</a>
+  <nav>
+    <a href="book-appointment.html">Book Appointment</a>
+    <a href="appointment-status.html">Check Status</a>
+    <a href="../shared/login.html">Staff Login</a>
+  </nav>
+</header>
+<main>
+  <h1>Book an Appointment</h1>
+  <form class="card" id="booking-form">
+    <div class="grid grid-2">
+      <div>
+        <label for="service">Service</label>
+        <select id="service" required></select>
+      </div>
+      <div>
+        <label for="date">Date</label>
+        <input type="date" id="date" required>
+      </div>
+    </div>
+
+    <label>Available time slots</label>
+    <div class="slots" id="slots"><p class="hint">Choose a service and date to see open slots.</p></div>
+    <input type="hidden" id="schedule_id">
+    <input type="hidden" id="appt_time">
+
+    <div class="grid grid-2" style="margin-top:16px">
+      <div>
+        <label for="full_name">Full Name</label>
+        <input type="text" id="full_name" required maxlength="120">
+      </div>
+      <div>
+        <label for="student_id">Student / Employee ID</label>
+        <input type="text" id="student_id" required maxlength="30">
+      </div>
+      <div>
+        <label for="contact_number">Contact Number</label>
+        <input type="text" id="contact_number" maxlength="30">
+      </div>
+      <div>
+        <label for="email">Email (optional)</label>
+        <input type="email" id="email" maxlength="120">
+      </div>
+    </div>
+
+    <label for="reason">Reason for visit</label>
+    <textarea id="reason" required maxlength="255"></textarea>
+    <p class="hint"><span id="reason-count">0</span>/255 characters</p>
+
+    <button type="submit" id="submit-btn">Submit Booking</button>
+  </form>
+
+  <div class="card" id="result-card" style="display:none">
+    <h2>Booking submitted</h2>
+    <p>Keep this reference number — you'll need it to check status, check in, or cancel.</p>
+    <div class="reference-box" id="reference-out"></div>
+    <a class="btn secondary" href="appointment-status.html">Check Status</a>
+  </div>
+</main>
+<script src="../js/config.js"></script>
+<script src="../js/session.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/book.js"></script>
+</body>
+</html>

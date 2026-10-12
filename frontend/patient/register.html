@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create Account - School Clinic</title>
+<link rel="stylesheet" href="../shared/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../index.html">School Clinic</a>
+  <nav><a href="../index.html">Home</a><a href="login.html">I have an account</a></nav>
+</header>
+<main style="max-width:460px">
+  <h1>Create a Patient Account</h1>
+  <p class="hint">Optional — lets you view your appointment history and status after logging in. You can still book, check status, and check in without one.</p>
+  <form class="card" id="register-form">
+    <label for="student_id">Student / Employee ID</label>
+    <input type="text" id="student_id" required maxlength="30">
+    <label for="full_name">Full Name</label>
+    <input type="text" id="full_name" required maxlength="120">
+    <label for="contact_number">Contact Number</label>
+    <input type="text" id="contact_number" maxlength="30">
+    <label for="email">Email</label>
+    <input type="email" id="email" required maxlength="120">
+    <label for="password">Password</label>
+    <input type="password" id="password" required minlength="6">
+    <button type="submit" style="margin-top:14px">Create Account</button>
+  </form>
+</main>
+<script src="../js/config.js"></script>
+<script src="../js/session.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/patient-register.js"></script>
+</body>
+</html>

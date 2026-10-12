@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appointments - Admin</title>
+<link rel="stylesheet" href="../shared/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="dashboard.html">School Clinic - Admin</a>
+  <nav>
+    <span id="welcome"></span>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="nurses.html">Nurses</a>
+    <a href="schedules.html">Schedules</a>
+    <a href="reports.html">Reports</a>
+    <a href="audit.html">Audit Log</a>
+    <button id="logout-btn">Log Out</button>
+  </nav>
+</header>
+<main>
+  <h1>All Appointments</h1>
+  <div class="card">
+    <div class="grid grid-3">
+      <div><label for="f-status">Status</label>
+        <select id="f-status"><option value="">All</option><option>PENDING</option><option>APPROVED</option><option>REJECTED</option><option>CANCELLED</option><option>CHECKED_IN</option><option>IN_CONSULTATION</option><option>COMPLETED</option><option>NO_SHOW</option></select>
+      </div>
+      <div><label for="f-date">Date</label><input type="date" id="f-date"></div>
+    </div>
+  </div>
+  <div class="card">
+    <table id="appt-table">
+      <thead><tr><th>Reference</th><th>Patient</th><th>Service</th><th>Date</th><th>Time</th><th>Nurse</th><th>Status</th><th>Action</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div class="empty-state" id="empty-state" style="display:none">No appointments match.</div>
+  </div>
+</main>
+<script src="../js/config.js"></script>
+<script src="../js/session.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/admin-appointments.js"></script>
+</body>
+</html>
